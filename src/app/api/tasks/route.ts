@@ -2,9 +2,11 @@ import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 import Task from "@/models/Task";
+import { connectToDatabase } from "@/lib/db";
 
 export async function GET() {
   try {
+    await connectToDatabase();
     const token = cookies().get("token")?.value;
     if (!token) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });

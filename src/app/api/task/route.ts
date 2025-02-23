@@ -6,6 +6,7 @@ import { connectToDatabase } from "@/lib/db";
 
 export async function POST(req: Request) {
   try {
+    await connectToDatabase();
     const token = cookies().get("token")?.value;
     if (!token) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });

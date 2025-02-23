@@ -26,7 +26,6 @@ const Tasks = () => {
     <div className="bg-slate-700 p-4 min-h-screen overflow-y-auto flex flex-col items-center justify-center">
       <div className="flex gap-4 mb-4">
         <Select
-          c
           onValueChange={(value) => setFilters(value, filterByDueDate)}
           value={filterByCompletion}
         >

@@ -76,7 +76,7 @@ const LoginPage = () => {
         {error && <p className="text-red-500 mt-2">{error}</p>}
       </form>
       <p className="text-center mt-4">
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <Link href="/signup" className="text-blue-500 hover:underline">
           Sign Up
         </Link>
