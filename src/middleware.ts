@@ -7,8 +7,11 @@ const authRoutes = ["/login", "/signup"];
 
 export async function middleware(request: NextRequest) {
   const token = request.cookies.get("token")?.value;
-
   const { pathname } = request.nextUrl;
+
+  if (pathname === "/") {
+    return NextResponse.redirect(new URL("/tasks", request.url));
+  }
 
   if (protectedRoutes.some((route) => pathname.startsWith(route))) {
     if (!token) {
@@ -39,5 +42,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/tasks/:path*", "/profile/:path*", "/login", "/signup"],
+  matcher: ["/", "/tasks/:path*", "/profile/:path*", "/login", "/signup"],
 };
