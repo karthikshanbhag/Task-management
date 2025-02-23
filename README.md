@@ -1,8 +1,16 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+Setup the .env
+```
+Create a .env file in your root folder
+Add this:
+MONGODB_URI=<your-mongodb-uri>
+JWT_SECRET=<your-jwt-secrete>
+NODE_ENV=production
+```
 
-First, run the development server:
+Run in the development server:
 
 ```bash
 npm run dev
